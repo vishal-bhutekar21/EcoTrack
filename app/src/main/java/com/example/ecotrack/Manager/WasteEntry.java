@@ -1,25 +1,53 @@
 package com.example.ecotrack.Manager;
 
 public class WasteEntry {
-    private String amount, date, imageUrl, recyclable, subType, wasteType;
+    private String key; // Unique key from Firebase
+    private String amount, date, recyclable, subType, wasteType, imageUrl;
 
     public WasteEntry() {
-        // Empty constructor required for Firebase
+        // Default constructor required for Firebase
     }
 
-    public WasteEntry(String amount, String date, String imageUrl, String recyclable, String subType, String wasteType) {
+    public WasteEntry(String key, String amount, String date, String recyclable, String subType, String wasteType, String imageUrl) {
+        this.key = key;
         this.amount = amount;
         this.date = date;
-        this.imageUrl = imageUrl;
         this.recyclable = recyclable;
         this.subType = subType;
         this.wasteType = wasteType;
+        this.imageUrl = imageUrl;
     }
 
-    public String getAmount() { return amount; }
-    public String getDate() { return date; }
-    public String getImageUrl() { return imageUrl; }
-    public String getRecyclable() { return recyclable; }
-    public String getSubType() { return subType; }
-    public String getWasteType() { return wasteType; }
+    // Getter and Setter for key
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getRecyclable() {
+        return recyclable;
+    }
+
+    public String getSubType() {
+        return subType;
+    }
+
+    public String getWasteType() {
+        return wasteType;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }

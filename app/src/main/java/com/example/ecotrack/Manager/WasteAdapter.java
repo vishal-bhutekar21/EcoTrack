@@ -23,11 +23,13 @@ public class WasteAdapter extends RecyclerView.Adapter<WasteAdapter.ViewHolder> 
     private Context context;
     private List<WasteEntry> wasteList;
     private DatabaseReference approvedDatabaseRef;
+    private DatabaseReference wasteDatabaseRef;
 
     public WasteAdapter(Context context, List<WasteEntry> wasteList) {
         this.context = context;
         this.wasteList = wasteList;
-        approvedDatabaseRef = FirebaseDatabase.getInstance().getReference("ApprovedWasteEntries"); // Target database
+        approvedDatabaseRef = FirebaseDatabase.getInstance().getReference("ApprovedWasteEntries");
+        wasteDatabaseRef = FirebaseDatabase.getInstance().getReference("WasteEntries"); // Original database reference
     }
 
     @NonNull
@@ -49,22 +51,37 @@ public class WasteAdapter extends RecyclerView.Adapter<WasteAdapter.ViewHolder> 
         // Load image using Glide
         Glide.with(context)
                 .load(wasteEntry.getImageUrl())
-                .placeholder(R.drawable.app_logo) // Add a placeholder image in drawable
-                .error(R.drawable.app_logo) // Add an error image in drawable
+                .placeholder(R.drawable.app_logo)
+                .error(R.drawable.app_logo)
                 .into(holder.imageView);
 
         // Approve Button Click Event
         holder.approveButton.setOnClickListener(v -> {
-            // Move data to "ApprovedWasteEntries"
             String id = approvedDatabaseRef.push().getKey();
-            approvedDatabaseRef.child(id).setValue(wasteEntry)
-                    .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(context, "Approved Successfully!", Toast.LENGTH_SHORT).show();
-                    })
-                    .addOnFailureListener(e -> {
-                        Toast.makeText(context, "Approval Failed!", Toast.LENGTH_SHORT).show();
-                    });
+
+            if (id != null) {
+                approvedDatabaseRef.child(id).setValue(wasteEntry)
+                        .addOnSuccessListener(aVoid -> {
+                            // Remove only the selected item from WasteEntries
+                            DatabaseReference wasteDatabaseRef = FirebaseDatabase.getInstance().getReference("WasteEntries");
+                            wasteDatabaseRef.child(wasteEntry.getKey()).removeValue()
+                                    .addOnSuccessListener(aVoid1 -> {
+                                        wasteList.remove(position);  // Remove from local list
+                                        notifyItemRemoved(position);
+                                        notifyItemRangeChanged(position, wasteList.size());
+                                        Toast.makeText(context, "Approved & Deleted Successfully!", Toast.LENGTH_SHORT).show();
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(context, "Failed to delete from WasteEntries!", Toast.LENGTH_SHORT).show();
+                                    });
+                        })
+                        .addOnFailureListener(e -> {
+                            Toast.makeText(context, "Approval Failed!", Toast.LENGTH_SHORT).show();
+                        });
+            }
         });
+
+
     }
 
     @Override
