@@ -86,4 +86,12 @@
     <color name="soft_green">#E8F5E9</color>
     <color name="soft_blue">#E3F2FD</color>
     <color name="soft_gray">#F5F5F5</color>
+
+    <color name="colorBlue">#BBDEFB</color> <!-- Very Light Blue -->
+    <color name="colorGreen">#C8E6C9</color> <!-- Very Light Green -->
+    <color name="colorYellow">#FFEB8D</color> <!-- Very Light Yellow -->
+    <color name="colorRed">#FFCDD2</color> <!-- Very Light Red -->
+    <color name="colorPurple">#E1BEE7</color> <!-- Very Light Purple -->
+    <color name="colorTeal">#B2DFDB</color> <!-- Very Light Teal -->
+
 </resources>

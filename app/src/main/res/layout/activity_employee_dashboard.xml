@@ -42,6 +42,7 @@
                 android:layout_height="40dp"
                 android:src="@drawable/menu"
                 android:padding="8dp"
+                android:layout_marginLeft="8dp"
                 android:contentDescription="Menu"/>
 
             <LinearLayout
