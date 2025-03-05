@@ -21,6 +21,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ecotrack.Authentication.Login;
 import com.example.ecotrack.R;
+import com.example.ecotrack.StaffWorkers.ManualWasteEnteries;
+import com.example.ecotrack.StaffWorkers.StaffBarcodScan;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,7 +32,7 @@ public class EmployeeDashboard extends AppCompatActivity implements NavigationVi
     private NavigationView navigationView;
     private TextView tvEmail;
     private MaterialCardView taskAssignments, collectionTracking, routeOptimization,
-            smartBinMonitoring, safetyChecklists, reportFeedback;
+            smartBinMonitoring, manualwasteentries, reportFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,15 +81,15 @@ public class EmployeeDashboard extends AppCompatActivity implements NavigationVi
         collectionTracking = findViewById(R.id.collectionTracking);
         routeOptimization = findViewById(R.id.routeOptimization);
         smartBinMonitoring = findViewById(R.id.smartBinMonitoring);
-        safetyChecklists = findViewById(R.id.safetyChecklists);
+        manualwasteentries = findViewById(R.id.safetyChecklists);
         reportFeedback = findViewById(R.id.reportFeedback);
 
         // Set Click Listeners
         taskAssignments.setOnClickListener(view -> openActivity(TaskAssignmentsActivity.class));
-        collectionTracking.setOnClickListener(view -> openActivity(CollectionTrackingActivity.class));
+        collectionTracking.setOnClickListener(view -> openActivity(StaffBarcodScan.class));
         routeOptimization.setOnClickListener(view -> openActivity(PickupRequestsActivity.class));
         smartBinMonitoring.setOnClickListener(view -> openActivity(BinStatusActivity.class));
-        safetyChecklists.setOnClickListener(view -> openActivity(SafetyGuideActivity.class));
+        manualwasteentries.setOnClickListener(view -> openActivity(ManualWasteEnteries.class));
         reportFeedback.setOnClickListener(view -> openActivity(WasteReportsActivity.class));
     }
 
