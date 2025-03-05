@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/app_logo"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/nav_waste_logging"
+        android:icon="@drawable/app_logo"
+        android:title="Waste Logging" />
+    <item
+        android:id="@+id/nav_collection_requests"
+        android:icon="@drawable/app_logo"
+        android:title="Collection Requests" />
+    <item
+        android:id="@+id/nav_reports_analytics"
+        android:icon="@drawable/app_logo"
+        android:title="Reports &amp; Analytics" />
+    <item
+        android:id="@+id/nav_profile_settings"
+        android:icon="@drawable/app_logo"
+        android:title="Profile &amp; Settings" />
+</menu>
