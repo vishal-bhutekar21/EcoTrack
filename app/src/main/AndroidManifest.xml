@@ -49,6 +49,7 @@
         <activity android:name=".Manager.CollectionSchedulingActivity" android:exported="false" />
         <activity android:name=".Manager.WasteMonitoringActivity" android:exported="false" />
         <activity android:name=".Manager.Manager" android:exported="false" />
+        <activity android:name=".Manager.WasteRequest" android:exported="false"/>
         <activity android:name=".Admin.SystemSettingsActivity" android:exported="false" />
         <activity android:name=".Admin.ReportsActivity" android:exported="false" />
         <activity android:name=".Admin.ApprovalRequestsActivity" android:exported="false" />
