@@ -4,30 +4,56 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="16dp">
 
+    <!-- ChipGroup with marginTop to avoid overlapping with the status bar -->
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:singleSelection="true">
+        android:layout_marginTop="16dp"
+        app:singleSelection="true"
+        app:chipSpacingHorizontal="8dp">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipNoAction"
-            android:text="No Action Needed"  android:layout_height="wrap_content" android:layout_width="100dp"/>
+            android:text="NA Needed"
+            app:chipBackgroundColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Chip.Filter"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipYetToExpire"
-            android:text="Yet to be Expired"  android:layout_height="wrap_content" android:layout_width="100dp"/>
+            android:text="Yet to be Expired"
+            app:chipBackgroundColor="@color/binStatusHalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Chip.Filter"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipExpired"
-            android:text="Expired"  android:layout_height="wrap_content" android:layout_width="100dp"/>
+            android:text="Expired"
+            app:chipBackgroundColor="@color/binStatusFull"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Chip.Filter"/>
     </com.google.android.material.chip.ChipGroup>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/binStatusHalf"
+        android:text="Set Notice to Staff and Workers"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="8dp"/>
 
+
+    <!-- RecyclerView with padding for better spacing -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="10dp"/>
+        android:paddingTop="16dp"
+        android:clipToPadding="false"/>
 </LinearLayout>
