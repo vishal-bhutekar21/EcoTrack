@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">EcoTrack</string>
+    <string name="navigation_drawer_open">he\n\n</string>
+    <string name="navigation_drawer_close">dd\n</string>
+    <string-array name="user_types">
+        <item>Admin</item>
+        <item>Manager</item>
+        <item>Waste Management</item>
+        <item>Staff Workers</item>
+    </string-array>
 </resources>
