@@ -39,6 +39,7 @@
                     android:layout_height="40dp"
                     android:src="@drawable/menu"
                     android:padding="8dp"
+                    android:layout_marginLeft="8dp"
                     android:contentDescription="Menu"/>
 
                 <LinearLayout
@@ -60,7 +61,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Manage system and oversee operations."
+                        android:text="Smart Waste, Sustainable Future!"
                         android:textSize="14sp"
                         android:textColor="@color/gray"
                         android:layout_marginTop="4dp"/>
@@ -78,7 +79,7 @@
             android:columnCount="2"
             android:rowCount="4"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="4dp"> <!-- Adjusted margin for better spacing -->
 
             <!-- User & Role Management -->
             <com.google.android.material.card.MaterialCardView
@@ -99,8 +100,7 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/user"
-
+                        android:src="@drawable/shield"
                         android:layout_gravity="center" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -134,7 +134,7 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/wastemagt"
+                        android:src="@drawable/recycle"
                         android:layout_gravity="center" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -143,7 +143,6 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textAlignment="center"
-
                         android:textColor="@color/black"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp" />
@@ -168,12 +167,10 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/recycledrep"
-
+                        android:src="@drawable/dashboard"
                         android:layout_gravity="center" />
                     <TextView
                         android:textAlignment="center"
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Reports &amp; Analytics"
@@ -203,11 +200,10 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/user"
+                        android:src="@drawable/compliance"
                         android:layout_gravity="center" />
                     <TextView
                         android:textAlignment="center"
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Compliance Oversight"
@@ -237,7 +233,7 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/user"
+                        android:src="@drawable/garbage1"
                         android:layout_gravity="center" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -269,7 +265,7 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/user"
+                        android:src="@drawable/wastemanagement"
                         android:layout_gravity="center" />
                     <TextView
                         android:layout_width="wrap_content"

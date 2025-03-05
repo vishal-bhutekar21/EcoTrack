@@ -1,71 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="10dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
         app:cardElevation="5dp"
-        android:backgroundTint="@color/white"
-        app:strokeColor="@color/green">
+        app:strokeColor="@color/green"
+        android:backgroundTint="@color/white">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"/>
-            <TextView android:id="@+id/wasteType"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Image -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop" />
+
+            <!-- Waste Type -->
+            <TextView
+                android:id="@+id/wasteType"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Hello"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"/>
-            <TextView android:id="@+id/subType"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="10dp" />
+
+            <!-- Sub Type -->
+            <TextView
+                android:id="@+id/subType"
                 android:layout_width="wrap_content"
-                android:textSize="16dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
                 android:text="Hello"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"/>
-    <TextView android:id="@+id/amount"
-        android:layout_width="wrap_content"
-        android:text="Hello"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_height="wrap_content"/>
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp" />
 
-    <TextView android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Hello"
-        android:layout_marginLeft="10dp"
-        android:layout_height="wrap_content"/>
+            <!-- Amount -->
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:textSize="18sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp" />
 
-    <TextView android:id="@+id/recyclable"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:text="Hello"
-        android:layout_height="wrap_content"/>
+            <!-- Date -->
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp" />
 
-    <Button android:id="@+id/approveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginRight="10dp"
-        android:backgroundTint="@color/green"
-        android:text="Approve"/>
+            <!-- Recyclable -->
+            <TextView
+                android:id="@+id/recyclable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp" />
+
+            <!-- Approve Button (Full Width) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/approveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Approve"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="@color/green"
+                android:textColor="@android:color/white" />
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-
 
 </LinearLayout>

@@ -5,24 +5,26 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:padding="24dp">
 
     <!-- App Logo -->
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/app_logo"
-        android:contentDescription="App Logo" />
+        android:contentDescription="App Logo"
+        android:layout_marginBottom="1dp" />
 
-    <!-- App Name -->
+    <!-- App Tagline -->
     <TextView
-        android:id="@+id/app_name"
+        android:id="@+id/app_tagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EcoTrack"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:text="Track. Sort. Sustain."
+        android:textSize="18sp"
         android:textColor="@color/black"
-        android:layout_marginTop="20dp" />
+        android:textStyle="bold"
+        android:textAlignment="center" />
 </LinearLayout>
