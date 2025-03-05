@@ -79,7 +79,7 @@
             android:columnCount="2"
             android:rowCount="4"
             android:orientation="horizontal"
-            android:layout_marginTop="4dp"> <!-- Adjusted margin for better spacing -->
+            android:layout_marginTop="4dp">
 
             <!-- User & Role Management -->
             <com.google.android.material.card.MaterialCardView
@@ -88,7 +88,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:backgroundTint="@color/soft_blue"
+                android:backgroundTint="@color/colorBlue"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
                 <LinearLayout
@@ -122,7 +122,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:backgroundTint="@color/soft_green"
+                android:backgroundTint="@color/colorGreen"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
                 <LinearLayout
@@ -156,6 +156,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
+                android:backgroundTint="@color/colorYellow"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
                 <LinearLayout
@@ -189,6 +190,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
+                android:backgroundTint="@color/colorRed"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
                 <LinearLayout
@@ -222,6 +224,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
+                android:backgroundTint="@color/colorPurple"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
                 <LinearLayout
@@ -254,6 +257,7 @@
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
+                android:backgroundTint="@color/colorTeal"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
                 <LinearLayout
@@ -281,6 +285,7 @@
 
         </GridLayout>
     </RelativeLayout>
+
     <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
