@@ -5,6 +5,8 @@
     <!-- Permissions -->
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- Features -->
@@ -62,6 +64,8 @@
         <activity android:name=".Employee.EmployeeDashboard" android:exported="true" />
         <activity android:name=".StaffWorkers.ScanActivity" android:exported="false" />
         <activity android:name=".StaffWorkers.StaffBarcodScan" android:exported="true" />
+        <activity android:name=".Employee.ManualWasteEnteries" android:exported="true" />
+        <activity android:name=".Manager.WasteRequest" android:exported="true" />
 
         <!-- Launcher Activity -->
         <activity android:name=".SplashScreen" android:exported="true">

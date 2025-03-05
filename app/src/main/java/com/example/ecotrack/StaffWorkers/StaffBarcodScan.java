@@ -50,8 +50,8 @@ public class StaffBarcodScan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_barcod_scan);
 
-        btnDefect=findViewById(R.id.btnDefected);
-        btnExpiry=findViewById(R.id.btnExpiry);
+        //btnDefect=findViewById(R.id.btnDefected);
+        //btnExpiry=findViewById(R.id.btnExpiry);
 
         tvScannedResult = findViewById(R.id.tvScannedResult);
 

@@ -8,4 +8,24 @@
         <item>Waste Management</item>
         <item>Staff Workers</item>
     </string-array>
+
+    <string-array name="waste_types">
+        <item>Packaging Material</item>
+        <item>Food Waste</item>
+        <item>Residual Waste</item>
+        <item>Hazardous Waste</item>
+        <item>E-Waste</item>
+    </string-array>
+    <string-array name="sub_types">
+        <item>Cardboard Boxes</item>
+        <item>Plastic Wraps</item>
+        <item>Plastic Containers</item>
+        <item>Expired Food Items</item>
+        <item>Organic Waste</item>
+    </string-array>
+    <string-array name="recyclable_types">
+        <item>Recyclable</item>
+        <item>Non-Recyclable</item>
+        <item>Disposable</item>
+    </string-array>
 </resources>
