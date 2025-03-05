@@ -11,8 +11,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ecotrack.Admin.AdminDashboard;
 import com.example.ecotrack.Authentication.Login;
+import com.example.ecotrack.Employee.EmployeeDashboard;
 import com.example.ecotrack.Manager.ManagerDashboard;
-import com.example.ecotrack.StaffWorkers.StaffWorkersDashboard;
 import com.example.ecotrack.WasteManagement.WasteManagementDashboard;
 
 
@@ -52,7 +52,7 @@ public class SplashScreen extends AppCompatActivity {
                         intent = new Intent(SplashScreen.this, WasteManagementDashboard.class);
                         break;
                     case "Staff Workers":
-                        intent = new Intent(SplashScreen.this, StaffWorkersDashboard.class);
+                        intent = new Intent(SplashScreen.this, EmployeeDashboard.class);
                         break;
                     default:
                         intent = new Intent(SplashScreen.this, Login.class);

@@ -53,7 +53,7 @@
         <activity android:name=".Admin.ReportsActivity" android:exported="false" />
         <activity android:name=".Admin.ApprovalRequestsActivity" android:exported="false" />
         <activity android:name=".Admin.UserManagementActivity" android:exported="false" />
-        <activity android:name=".Admin.Admin" android:exported="false" />
+
         <activity android:name=".Employee.SafetyGuideActivity" android:exported="false" />
         <activity android:name=".Employee.WasteReportsActivity" android:exported="false" />
         <activity android:name=".Employee.PickupRequestsActivity" android:exported="false" />

@@ -6,8 +6,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.ecotrack.Authentication.Login;
 import com.example.ecotrack.R;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 
 public class AdminDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,8 +30,10 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private TextView tvEmail;
+    private ImageView menuIcon;  // Added ImageView variable
 
-    private Button btn;
+    private MaterialCardView userRoleManagement, wasteManagement, reportsAnalytics, complianceOversight,
+            externalServices, costAnalysis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,38 +42,23 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.activity_admin_dashboard);
 
 
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(0, systemBars.top, 0, 0);
-            return insets;
-        });
 
-        // Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        // Drawer Layout
+        // Initialize Drawer Layout and Navigation View
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
-        btn=findViewById(R.id.btn);
 
-        btn.setOnClickListener(v->{
-            Intent intent=new Intent(AdminDashboard.this,UserManagement.class);
-            startActivity(intent);
+        // Initialize and setup the menu icon
+        menuIcon = findViewById(R.id.menuIcon);
+
+        // Set click listener for menu icon to open drawer
+        menuIcon.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
         });
-
-        // Toggle for Drawer
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-
-
-
 
         // Set User Email in Header
         View headerView = navigationView.getHeaderView(0);
@@ -79,6 +68,26 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
         String userEmail = sharedPreferences.getString("userEmail", "user@example.com");
         tvEmail.setText(userEmail);
 
+        // Initialize UI components
+        userRoleManagement = findViewById(R.id.userRoleManagement);
+        wasteManagement = findViewById(R.id.wasteManagement);
+        reportsAnalytics = findViewById(R.id.reportsAnalytics);
+        complianceOversight = findViewById(R.id.complianceOversight);
+        externalServices = findViewById(R.id.externalServices);
+        costAnalysis = findViewById(R.id.costAnalysis);
+
+        // Set onClickListeners
+        userRoleManagement.setOnClickListener(v -> navigateTo(UserManagementActivity.class, "User & Role Management Clicked"));
+        wasteManagement.setOnClickListener(v -> navigateTo(WasteManagementActivity.class, "Waste Management Clicked"));
+        reportsAnalytics.setOnClickListener(v -> navigateTo(ReportsActivity.class, "Reports & Analytics Clicked"));
+        complianceOversight.setOnClickListener(v -> navigateTo(ComplianceOversightActivity.class, "Compliance Oversight Clicked"));
+        externalServices.setOnClickListener(v -> navigateTo(ExternalServicesActivity.class, "External Services Clicked"));
+        costAnalysis.setOnClickListener(v -> navigateTo(CostAnalysisActivity.class, "Cost Analysis Clicked"));
+    }
+
+    private void navigateTo(Class<?> activity, String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(AdminDashboard.this, activity));
     }
 
     @Override

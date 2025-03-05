@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.ecotrack.Authentication.Login;
 import com.example.ecotrack.R;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationView;
 
 public class ManagerDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,6 +25,10 @@ public class ManagerDashboard extends AppCompatActivity implements NavigationVie
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private TextView tvEmail;
+    ImageView menuIcon;
+
+    private MaterialCardView wasteMonitoring, collectionScheduling, wasteAlerts,
+            aiSuggestions, sustainabilityMetrics, recyclingReports;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +37,16 @@ public class ManagerDashboard extends AppCompatActivity implements NavigationVie
         setContentView(R.layout.activity_manager_dashboard);
 
         // Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        menuIcon = findViewById(R.id.menuIcon);
 
+        // Set click listener for menu icon to open drawer
+        menuIcon.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
         // Drawer Layout
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
@@ -41,7 +54,7 @@ public class ManagerDashboard extends AppCompatActivity implements NavigationVie
 
         // Toggle for Drawer
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar,
+                this, drawerLayout,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -53,6 +66,27 @@ public class ManagerDashboard extends AppCompatActivity implements NavigationVie
         SharedPreferences sharedPreferences = getSharedPreferences("EcoTrackPrefs", MODE_PRIVATE);
         String userEmail = sharedPreferences.getString("userEmail", "user@example.com");
         tvEmail.setText(userEmail);
+
+        // Initialize UI components
+        wasteMonitoring = findViewById(R.id.wasteMonitoring);
+        collectionScheduling = findViewById(R.id.collectionScheduling);
+        wasteAlerts = findViewById(R.id.wasteAlerts);
+        aiSuggestions = findViewById(R.id.aiSuggestions);
+        sustainabilityMetrics = findViewById(R.id.sustainabilityMetrics);
+        recyclingReports = findViewById(R.id.recyclingReports);
+
+        // Set click listeners
+        wasteMonitoring.setOnClickListener(view -> openActivity(WasteMonitoringActivity.class));
+        collectionScheduling.setOnClickListener(view -> openActivity(CollectionSchedulingActivity.class));
+        wasteAlerts.setOnClickListener(view -> openActivity(WasteAlertsActivity.class));
+        aiSuggestions.setOnClickListener(view -> openActivity(AISuggestionsActivity.class));
+        sustainabilityMetrics.setOnClickListener(view -> openActivity(SustainabilityMetricsActivity.class));
+        recyclingReports.setOnClickListener(view -> openActivity(RecyclingReportsActivity.class));
+    }
+
+    private void openActivity(Class<?> activityClass) {
+        Intent intent = new Intent(ManagerDashboard.this, activityClass);
+        startActivity(intent);
     }
 
     @Override

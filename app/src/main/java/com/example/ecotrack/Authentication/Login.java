@@ -6,14 +6,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.ecotrack.Admin.AdminDashboard;
+import com.example.ecotrack.Employee.EmployeeDashboard;
 import com.example.ecotrack.Manager.ManagerDashboard;
-import com.example.ecotrack.StaffWorkers.StaffWorkersDashboard;
 import com.example.ecotrack.WasteManagement.WasteManagementDashboard;
 import com.example.ecotrack.R;
 import com.google.android.material.button.MaterialButton;
@@ -121,7 +119,7 @@ public class Login extends AppCompatActivity {
                                     startActivity(new Intent(Login.this, WasteManagementDashboard.class));
                                     break;
                                 case "Staff Workers":
-                                    startActivity(new Intent(Login.this, StaffWorkersDashboard.class));
+                                    startActivity(new Intent(Login.this, EmployeeDashboard.class));
                                     break;
                             }
                             finish();
