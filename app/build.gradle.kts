@@ -47,6 +47,8 @@ dependencies {
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
 
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
     // Additional dependency from the first file
     implementation("com.google.android.material:material:1.9.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")

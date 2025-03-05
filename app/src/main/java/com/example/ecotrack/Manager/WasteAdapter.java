@@ -62,13 +62,14 @@ public class WasteAdapter extends RecyclerView.Adapter<WasteAdapter.ViewHolder> 
             if (id != null) {
                 approvedDatabaseRef.child(id).setValue(wasteEntry)
                         .addOnSuccessListener(aVoid -> {
-                            // Remove only the selected item from WasteEntries
                             DatabaseReference wasteDatabaseRef = FirebaseDatabase.getInstance().getReference("WasteEntries");
                             wasteDatabaseRef.child(wasteEntry.getKey()).removeValue()
                                     .addOnSuccessListener(aVoid1 -> {
-                                        wasteList.remove(position);  // Remove from local list
-                                        notifyItemRemoved(position);
-                                        notifyItemRangeChanged(position, wasteList.size());
+                                        if (position < wasteList.size()) { // Prevent IndexOutOfBounds
+                                            wasteList.remove(position);
+                                            notifyItemRemoved(position);
+                                            notifyItemRangeChanged(position, wasteList.size());
+                                        }
                                         Toast.makeText(context, "Approved & Deleted Successfully!", Toast.LENGTH_SHORT).show();
                                     })
                                     .addOnFailureListener(e -> {
@@ -80,6 +81,7 @@ public class WasteAdapter extends RecyclerView.Adapter<WasteAdapter.ViewHolder> 
                         });
             }
         });
+
 
 
     }
