@@ -74,4 +74,16 @@
     <color name="badgeGold">#FFFFD600</color>
     <color name="badgeSilver">#FFBDBDBD</color>
     <color name="badgeBronze">#FF8D6E63</color>
+
+    <color name="eco_green">#4CAF50</color>
+    <color name="deep_blue">#2196F3</color>
+    <color name="neutral_gray">#E0E0E0</color>
+    <color name="background">#121212</color>
+
+    <color name="gray">#808080</color>
+    <color name="green">#4CAF50</color>
+    <color name="blue">#2196F3</color>
+    <color name="soft_green">#E8F5E9</color>
+    <color name="soft_blue">#E3F2FD</color>
+    <color name="soft_gray">#F5F5F5</color>
 </resources>

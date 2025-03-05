@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:id="@+id/mainLayout"
     android:background="@color/white"
-    tools:context=".Employee.EmployeeDashboard">
+    tools:context=".Admin.AdminDashboard">
 
     <!-- Header -->
     <com.google.android.material.card.MaterialCardView
@@ -45,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hello, Worker!"
+                    android:text="Hello, Admin!"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/black" />
@@ -53,7 +52,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Complete tasks and track waste."
+                    android:text="Manage system and oversee operations."
                     android:textSize="14sp"
                     android:textColor="@color/gray"
                     android:layout_marginTop="4dp"/>
@@ -69,13 +68,13 @@
         android:layout_below="@id/header"
         android:padding="16dp"
         android:columnCount="2"
-        android:rowCount="3"
+        android:rowCount="4"
         android:orientation="horizontal"
         android:layout_marginTop="16dp">
 
-        <!-- Task Assignments & Real-Time Updates -->
+        <!-- User & Role Management -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/taskAssignments"
+            android:id="@+id/userRoleManagement"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_columnWeight="1"
@@ -93,22 +92,24 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/user"
+
                     android:layout_gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Task Assignments"
+                    android:text="User &amp; Role Management"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Waste Collection & Segregation Tracking -->
+        <!-- Overall Waste Management -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/collectionTracking"
+            android:id="@+id/wasteManagement"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_columnWeight="1"
@@ -125,94 +126,29 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/wastemagt"
                     android:layout_gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Collection Tracking"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Route Optimization for Waste Disposal -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/routeOptimization"
-            android:layout_width="0dp"
-            android:layout_height="160dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/user"
-                    android:layout_gravity="center" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Route Optimization"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Smart Bin Monitoring & Alerts -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/smartBinMonitoring"
-            android:layout_width="0dp"
-            android:layout_height="160dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/user"
-                    android:layout_gravity="center" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Smart Bin Monitoring"
+                    android:text="Waste Management"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
+
                     android:textColor="@color/black"
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Compliance & Safety Checklists -->
+        <!-- System-Wide Reports & Analytics -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/safetyChecklists"
+            android:id="@+id/reportsAnalytics"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
-
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
             <LinearLayout
@@ -224,12 +160,15 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/recycledrep"
+
                     android:layout_gravity="center" />
                 <TextView
+                    android:textAlignment="center"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Safety Checklists"
+                    android:text="Reports &amp; Analytics"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -238,14 +177,47 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Reporting Issues & Feedback -->
+        <!-- Compliance & Regulatory Oversight -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/reportFeedback"
+            android:id="@+id/complianceOversight"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/user"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:textAlignment="center"
 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Compliance Oversight"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- External Waste Disposal Services -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/externalServices"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
             <LinearLayout
@@ -262,7 +234,39 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Report Feedback"
+                    android:text="External Services"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cost Analysis & Budgeting -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/costAnalysis"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/user"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cost Analysis"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
