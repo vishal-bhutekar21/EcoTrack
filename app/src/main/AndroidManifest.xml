@@ -62,7 +62,7 @@
         <activity android:name=".Employee.EmployeeDashboard" android:exported="true" />
         <activity android:name=".StaffWorkers.ScanActivity" android:exported="false" />
         <activity android:name=".StaffWorkers.StaffBarcodScan" android:exported="true" />
-
+<activity android:name=".StaffWorkers.ManualWasteEnteries" android:exported="true"/>
         <!-- Launcher Activity -->
         <activity android:name=".SplashScreen" android:exported="true">
             <intent-filter>
