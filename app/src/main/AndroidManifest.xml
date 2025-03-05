@@ -40,6 +40,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Employee.EmployeeDashboard"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
     </application>
