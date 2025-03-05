@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#FF00C853</color>  <!-- Blinkit-like Green (Toolbar/App Bar) -->
+    <color name="colorPrimaryDark">#FF009624</color> <!-- Status Bar -->
+    <color name="colorAccent">#FF2196F3</color> <!-- Accent Blue (FAB, Buttons) -->
+
+    <!-- Alert & Status Colors -->
+    <color name="colorAlertRed">#FFFF5252</color>
+    <color name="colorWarningOrange">#FFFF9800</color>
+    <color name="colorSuccessGreen">#FF4CAF50</color>
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#FF2D2D2D</color> <!-- Dark Gray -->
+    <color name="colorTextSecondary">#FF757575</color> <!-- Medium Gray -->
+    <color name="colorTextOnDark">#FFFFFFFF</color> <!-- White (for dark backgrounds) -->
+
+    <!-- Backgrounds & Surfaces -->
+    <color name="colorBackgroundLight">#FFFFFFFF</color>
+    <color name="colorBackgroundDark">#FF121212</color>
+    <color name="colorSurfaceLight">#FFF5F5F5</color> <!-- Light Card Background -->
+    <color name="colorSurfaceDark">#FF262626</color> <!-- Dark Card Background -->
+
+    <!-- Toolbar & App Bar -->
+    <color name="colorToolbar">@color/colorPrimary</color>
+    <color name="colorStatusBar">@color/colorPrimaryDark</color>
+    <color name="colorToolbarText">@color/colorTextOnDark</color> <!-- White text on green toolbar -->
+
+    <!-- Navigation Components -->
+    <color name="colorNavigationBar">#FF000000</color> <!-- Black navigation bar -->
+    <color name="colorBottomNavBackground">@color/white</color>
+    <color name="colorBottomNavIcon">@color/colorTextSecondary</color> <!-- Gray icons -->
+    <color name="colorBottomNavIconSelected">@color/colorPrimary</color> <!-- Green when selected -->
+
+    <!-- Cards -->
+    <color name="colorCardBackgroundLight">@color/colorSurfaceLight</color>
+    <color name="colorCardBackgroundDark">@color/colorSurfaceDark</color>
+    <color name="colorCardText">@color/colorTextPrimary</color>
+    <color name="colorCardStroke">#1F000000</color> <!-- Subtle border for cards -->
+
+    <!-- Dividers -->
+    <color name="colorDividerLight">#1F000000</color> <!-- Light mode divider -->
+    <color name="colorDividerDark">#33FFFFFF</color> <!-- Dark mode divider -->
+
+    <!-- Icons -->
+    <color name="colorIconLight">#8A000000</color> <!-- Light mode icons (60% opacity) -->
+    <color name="colorIconDark">#B3FFFFFF</color> <!-- Dark mode icons -->
+
+    <!-- Floating Action Button (FAB) -->
+    <color name="colorFabBackground">@color/colorAccent</color> <!-- Blue -->
+    <color name="colorFabIcon">@color/white</color>
+    <color name="colorFabPressed">#FF1565C0</color> <!-- Darker blue when pressed -->
+
+    <!-- Button States -->
+    <color name="buttonPrimaryPressed">#FF009624</color>
+    <color name="buttonPrimaryDisabled">#FFB2E6C2</color>
+    <color name="buttonSecondary">#FF2196F3</color>
+    <color name="buttonSecondaryPressed">#FF1565C0</color>
+
+    <!-- Bin Status Indicators -->
+    <color name="binStatusFull">#FFFF5252</color> <!-- Red -->
+    <color name="binStatusHalf">#FFFF9800</color> <!-- Orange -->
+    <color name="binStatusEmpty">#FF00C853</color> <!-- Green -->
+
+    <!-- Progress Bars -->
+    <color name="progressFill">#FF00C853</color> <!-- Green -->
+    <color name="progressTrack">#FFE0E0E0</color> <!-- Light Gray -->
+
+    <!-- Badges & Gamification -->
+    <color name="badgeGold">#FFFFD600</color>
+    <color name="badgeSilver">#FFBDBDBD</color>
+    <color name="badgeBronze">#FF8D6E63</color>
+</resources>
