@@ -76,7 +76,7 @@ public class ManagerDashboard extends AppCompatActivity implements NavigationVie
         recyclingReports = findViewById(R.id.recyclingReports);
 
         // Set click listeners
-        wasteMonitoring.setOnClickListener(view -> openActivity(WasteMonitoringActivity.class));
+        wasteMonitoring.setOnClickListener(view -> openActivity(WasteRequest.class));
         collectionScheduling.setOnClickListener(view -> openActivity(CollectionSchedulingActivity.class));
         wasteAlerts.setOnClickListener(view -> openActivity(WasteAlertsActivity.class));
         aiSuggestions.setOnClickListener(view -> openActivity(AISuggestionsActivity.class));

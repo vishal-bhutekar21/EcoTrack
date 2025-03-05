@@ -46,49 +46,49 @@
     </com.google.android.material.card.MaterialCardView>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:orientation="horizontal">-->
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btnExpiry"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="5dp"
-            app:cardBackgroundColor="@color/colorAlertRed"
-            android:text="Scan Barcode/QR Code">
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/btnExpiry"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            app:cardBackgroundColor="@color/colorAlertRed"-->
+<!--            android:text="Scan Barcode/QR Code">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Expried"
-                android:layout_gravity="center"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
-        </com.google.android.material.card.MaterialCardView>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Expried"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/white"/>-->
+<!--        </com.google.android.material.card.MaterialCardView>-->
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btnDefected"
-            android:layout_width="150dp"
-            android:layout_marginLeft="5dp"
-            android:layout_height="50dp"
-            app:cardBackgroundColor="@color/binStatusHalf"
-            android:text="Scan Barcode/QR Code">
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/btnDefected"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            app:cardBackgroundColor="@color/binStatusHalf"-->
+<!--            android:text="Scan Barcode/QR Code">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Defected"
-                android:layout_gravity="center"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
-        </com.google.android.material.card.MaterialCardView>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Defected"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/white"/>-->
+<!--        </com.google.android.material.card.MaterialCardView>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 </LinearLayout>
