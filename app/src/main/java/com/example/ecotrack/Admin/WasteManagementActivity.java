@@ -91,6 +91,7 @@ public class WasteManagementActivity extends AppCompatActivity {
                     }
 
                     productList.add(new Product(batchNo, productName, productType, expiryDate, remainingDays));
+
                 }
                 productAdapter.updateList(productList);
             } catch (Exception e) {

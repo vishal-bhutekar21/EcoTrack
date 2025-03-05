@@ -84,38 +84,7 @@
         android:layout_marginTop="16dp">
 
         <!-- Task Assignments & Real-Time Updates -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/taskAssignments"
-            android:layout_width="0dp"
-            android:layout_height="160dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:backgroundTint="@color/soft_blue"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/user"
-                    android:layout_gravity="center" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Task Assignments"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+
 
         <!-- Waste Collection & Segregation Tracking -->
         <com.google.android.material.card.MaterialCardView
@@ -136,7 +105,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/qrcode"
                     android:layout_gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -153,15 +122,18 @@
 
         <!-- Route Optimization for Waste Disposal -->
         <com.google.android.material.card.MaterialCardView
+            android:backgroundTint="#39FF9800"
             android:id="@+id/routeOptimization"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_columnWeight="1"
+
             android:layout_margin="8dp"
 
             app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
+          >
             <LinearLayout
+                android:backgroundTint="#5E8D6E63"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -170,12 +142,12 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/goods"
                     android:layout_gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Route Optimization"
+                    android:text="Emergency Products to Sell"
                     android:textSize="12sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
@@ -187,13 +159,14 @@
 
         <!-- Smart Bin Monitoring & Alerts -->
         <com.google.android.material.card.MaterialCardView
+            android:backgroundTint="#452196F3"
             android:id="@+id/smartBinMonitoring"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
+          >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -203,7 +176,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/warehouse"
                     android:layout_gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -221,13 +194,14 @@
         <!-- Compliance & Safety Checklists -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/safetyChecklists"
+            android:backgroundTint="#3400FF14"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
 
             app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -237,7 +211,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/checklistt"
                     android:layout_gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -252,38 +226,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Reporting Issues & Feedback -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/reportFeedback"
-            android:layout_width="0dp"
-            android:layout_height="160dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
 
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/user"
-                    android:layout_gravity="center" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Report Feedback"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
 
     </GridLayout>
 </RelativeLayout>

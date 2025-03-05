@@ -77,20 +77,19 @@ public class EmployeeDashboard extends AppCompatActivity implements NavigationVi
         });
 
         // Initialize MaterialCardViews
-        taskAssignments = findViewById(R.id.taskAssignments);
+
         collectionTracking = findViewById(R.id.collectionTracking);
         routeOptimization = findViewById(R.id.routeOptimization);
         smartBinMonitoring = findViewById(R.id.smartBinMonitoring);
         manualwasteentries = findViewById(R.id.safetyChecklists);
-        reportFeedback = findViewById(R.id.reportFeedback);
 
         // Set Click Listeners
-        taskAssignments.setOnClickListener(view -> openActivity(TaskAssignmentsActivity.class));
+       // taskAssignments.setOnClickListener(view -> openActivity(TaskAssignmentsActivity.class));
         collectionTracking.setOnClickListener(view -> openActivity(StaffBarcodScan.class));
         routeOptimization.setOnClickListener(view -> openActivity(PickupRequestsActivity.class));
         smartBinMonitoring.setOnClickListener(view -> openActivity(BinStatusActivity.class));
         manualwasteentries.setOnClickListener(view -> openActivity(ManualWasteEnteries.class));
-        reportFeedback.setOnClickListener(view -> openActivity(WasteReportsActivity.class));
+        //reportFeedback.setOnClickListener(view -> openActivity(WasteReportsActivity.class));
     }
 
     private void openActivity(Class<?> activityClass) {

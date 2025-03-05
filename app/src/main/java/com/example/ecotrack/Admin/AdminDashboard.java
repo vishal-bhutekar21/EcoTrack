@@ -77,7 +77,7 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
         costAnalysis = findViewById(R.id.costAnalysis);
 
         // Set onClickListeners
-        userRoleManagement.setOnClickListener(v -> navigateTo(UserManagementActivity.class, "User & Role Management Clicked"));
+        userRoleManagement.setOnClickListener(v -> navigateTo(UserManagement.class, "User & Role Management Clicked"));
         wasteManagement.setOnClickListener(v -> navigateTo(WasteManagementActivity.class, "Waste Management Clicked"));
         reportsAnalytics.setOnClickListener(v -> navigateTo(ReportsActivity.class, "Reports & Analytics Clicked"));
         complianceOversight.setOnClickListener(v -> navigateTo(ComplianceOversightActivity.class, "Compliance Oversight Clicked"));
