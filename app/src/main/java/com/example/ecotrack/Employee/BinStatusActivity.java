@@ -1,13 +1,21 @@
 package com.example.ecotrack.Employee;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.ecotrack.R;
 import com.github.mikephil.charting.charts.PieChart;
@@ -83,14 +91,19 @@ public class BinStatusActivity extends AppCompatActivity {
                         case "Recyclable":
                             recyclableMap.put(subType, recyclableMap.getOrDefault(subType, 0) + amount);
                             totalRecyclable += amount;
+                            checkWasteAmountAndNotify(totalRecyclable, "Recyclable");
+
                             break;
                         case "Non-Recyclable":
                             nonRecyclableMap.put(subType, nonRecyclableMap.getOrDefault(subType, 0) + amount);
                             totalNonRecyclable += amount;
+                            checkWasteAmountAndNotify(totalNonRecyclable, "Non-Recyclable");
+
                             break;
                         case "Disposable":
                             disposableMap.put(subType, disposableMap.getOrDefault(subType, 0) + amount);
                             totalDisposable += amount;
+                            checkWasteAmountAndNotify(totalDisposable, "Disposable");
                             break;
                     }
                 }
@@ -147,5 +160,67 @@ public class BinStatusActivity extends AppCompatActivity {
         progressBar.setProgress(progress);
         textView.setText(totalAmount + " kg (" + progress + "%)");
     }
+    private void checkWasteAmountAndNotify(int totalAmount, String wasteType) {
+        if (totalAmount > 100) {
+            showWarningDialog(wasteType, totalAmount);
+            sendNotificationToWasteManagement();
+            storeWasteDisposalRequest(wasteType, totalAmount);
+        }
+    }
+    private void showWarningDialog(String wasteType, int totalAmount) {
+        new AlertDialog.Builder(this)
+                .setTitle("Warning: Excess Waste")
+                .setMessage("The total waste amount has exceeded 100 kg (" + totalAmount + " kg). A request has been sent to the waste management team.")
+                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
+                .show();
+    }
+    private void sendNotificationToWasteManagement() {
+        // Simulating sending notification
+        Log.d("Notification", "Notification sent to Waste Management Team.");
+    }
+
+    private void storeWasteDisposalRequest(String wasteType, int totalAmount) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("wasteDisposalTeamRequests");
+
+        String requestId = ref.push().getKey();
+        if (requestId == null) {
+            Log.e("Firebase", "Generated requestId is null!");
+            return;
+        }
+
+        Map<String, Object> requestData = new HashMap<>();
+        requestData.put("wasteType", wasteType);
+        requestData.put("amount", totalAmount);
+        requestData.put("timestamp", System.currentTimeMillis());
+
+        ref.child(requestId).setValue(requestData)
+                .addOnSuccessListener(aVoid -> Log.d("Firebase", "Request stored successfully"))
+                .addOnFailureListener(e -> Log.e("Firebase", "Failed to store request", e));
+    }
+
+    private void getCurrentLocation(LocationCallback callback) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+            return;
+        }
+
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        if (location != null) {
+            callback.onLocationReceived(location.getLatitude(), location.getLongitude());
+        } else {
+            Log.e("Location", "Failed to retrieve location");
+        }
+    }
+
+    // Interface to handle location retrieval
+    interface LocationCallback {
+        void onLocationReceived(double latitude, double longitude);
+    }
+
+
+
+
 
 }
