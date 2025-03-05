@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.WasteManagementActivity">
+    android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNoAction"
+            android:text="No Action Needed"  android:layout_height="wrap_content" android:layout_width="100dp"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipYetToExpire"
+            android:text="Yet to be Expired"  android:layout_height="wrap_content" android:layout_width="100dp"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipExpired"
+            android:text="Expired"  android:layout_height="wrap_content" android:layout_width="100dp"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"/>
+</LinearLayout>
