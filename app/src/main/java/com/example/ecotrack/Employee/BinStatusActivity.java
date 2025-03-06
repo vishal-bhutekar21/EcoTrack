@@ -192,6 +192,7 @@ public class BinStatusActivity extends AppCompatActivity {
         requestData.put("wasteType", wasteType);
         requestData.put("amount", totalAmount);
         requestData.put("timestamp", System.currentTimeMillis());
+        requestData.put("status", "Pending");
 
         ref.child(requestId).setValue(requestData)
                 .addOnSuccessListener(aVoid -> Log.d("Firebase", "Request stored successfully"))

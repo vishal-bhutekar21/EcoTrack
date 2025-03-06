@@ -1,6 +1,6 @@
 package com.example.ecotrack.WasteManagement;
 
-public class PickupRequest {
+public class    PickupRequest {
     private String requestId;
     private String userId;
     private String location;

@@ -79,7 +79,7 @@ public class WasteManagementDashboard extends AppCompatActivity implements Navig
 
         // Set Click Listeners
         pickupRequest.setOnClickListener(view -> openActivity(PickupRequestActivity.class));
-        pickupSchedules.setOnClickListener(view -> openActivity(PickupSchedulesActivity.class));
+        pickupSchedules.setOnClickListener(view -> openActivity(PickupScheduleActivity.class));
     }
 
     private void openActivity(Class<?> activityClass) {
