@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/dialogTitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Request Status"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/requestDetailsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Request #1234 | Main Street Store | Recyclable"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="20dp" />
+
+    <RadioGroup
+        android:id="@+id/statusRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <RadioButton
+            android:id="@+id/radioInProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mark as In Progress"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioCompleted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mark as Completed"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioCancelled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel Request"
+            android:textSize="16sp"
+            android:padding="8dp" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Comments (Optional)"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/commentsEditText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:padding="12dp"
+        android:hint="Enter any comments about this pickup"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edit_text_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp"
+            android:backgroundTint="#F5F5F5"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/updateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp"
+            android:backgroundTint="#2196F3" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-
-    <!-- Features -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Features -->
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
@@ -26,51 +23,120 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoTrack"
         tools:targetApi="31">
-
-        <!-- Activities -->
-        <activity android:name=".Admin.UserManagement" android:exported="true" />
-        <activity android:name=".Authentication.OtpVerificationActivity" android:exported="false" />
-        <activity android:name=".Authentication.AdminSignup" android:exported="true" />
-        <activity android:name=".Admin.AdminDashboard" android:exported="false" />
-        <activity android:name=".Manager.ManagerDashboard" android:exported="false" />
-        <activity android:name=".WasteManagement.WasteManagementDashboard" android:exported="false" />
-        <activity android:name=".Authentication.Login" android:exported="true" />
-        <activity android:name=".MainActivity" android:exported="true" />
-        <activity android:name=".Employee.TaskAssignmentsActivity" android:exported="false" />
-        <activity android:name=".Employee.CollectionTrackingActivity" android:exported="false" />
-        <activity android:name=".Admin.CostAnalysisActivity" android:exported="false" />
-        <activity android:name=".Admin.ComplianceOversightActivity" android:exported="false" />
-        <activity android:name=".Admin.ExternalServicesActivity" android:exported="false" />
-        <activity android:name=".Admin.WasteManagementActivity" android:exported="false" />
-        <activity android:name=".Manager.RecyclingReportsActivity" android:exported="false" />
-        <activity android:name=".Manager.SustainabilityMetricsActivity" android:exported="false" />
-        <activity android:name=".Manager.AISuggestionsActivity" android:exported="false" />
-        <activity android:name=".Manager.WasteAlertsActivity" android:exported="false" />
-        <activity android:name=".Manager.CollectionSchedulingActivity" android:exported="false" />
-        <activity android:name=".Manager.WasteMonitoringActivity" android:exported="false" />
-        <activity android:name=".Manager.Manager" android:exported="false" />
-        <activity android:name=".Manager.WasteRequest" android:exported="false"/>
-        <activity android:name=".Admin.SystemSettingsActivity" android:exported="false" />
-        <activity android:name=".Admin.ReportsActivity" android:exported="false" />
-        <activity android:name=".Admin.ApprovalRequestsActivity" android:exported="false" />
-        <activity android:name=".Admin.UserManagementActivity" android:exported="false" />
-<activity android:name=".StaffWorkers.ManualWasteEnteries" android:exported="true"/>
-        <activity android:name=".Manager.WasteRequest" android:exported="true"/>
-        <activity android:name=".Employee.SafetyGuideActivity" android:exported="false" />
-        <activity android:name=".Employee.WasteReportsActivity" android:exported="false" />
-        <activity android:name=".Employee.PickupRequestsActivity" android:exported="false" />
-        <activity android:name=".Employee.BinStatusActivity" android:exported="false" />
-        <activity android:name=".Employee.WasteLoggingActivity" android:exported="false" />
-        <activity android:name=".Employee.EmployeeDashboard" android:exported="true" />
-        <activity android:name=".StaffWorkers.ScanActivity" android:exported="false" />
-        <activity android:name=".StaffWorkers.StaffBarcodScan" android:exported="true" />
-<activity android:name=".StaffWorkers.ManualWasteEnteries" android:exported="true"/>
-        <!-- Launcher Activity -->
-        <activity android:name=".SplashScreen" android:exported="true">
+        <activity
+            android:name=".WasteManagement.PickupSchedulesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WasteManagement.PickupRequestActivity"
+            android:exported="false" /> <!-- Activities -->
+        <activity
+            android:name=".Admin.UserManagement"
+            android:exported="true" />
+        <activity
+            android:name=".Authentication.OtpVerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.AdminSignup"
+            android:exported="true" />
+        <activity
+            android:name=".Admin.AdminDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.ManagerDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".WasteManagement.WasteManagementDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Login"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Employee.TaskAssignmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Employee.CollectionTrackingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.CostAnalysisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ComplianceOversightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ExternalServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.WasteManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.RecyclingReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.SustainabilityMetricsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.AISuggestionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.WasteAlertsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.CollectionSchedulingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.WasteMonitoringActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Manager.WasteRequest"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.SystemSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ApprovalRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StaffWorkers.ManualWasteEnteries"
+            android:exported="true" />
+        <activity
+            android:name=".StaffWorkers.ManualWasteEnteries"
+            android:exported="true" />
+        <activity
+            android:name=".Employee.SafetyGuideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Employee.WasteReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Employee.PickupRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Employee.BinStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Employee.WasteLoggingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Employee.EmployeeDashboard"
+            android:exported="true" />
+        <activity
+            android:name=".StaffWorkers.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StaffWorkers.StaffBarcodScan"
+            android:exported="true" /> <!-- Launcher Activity -->
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
