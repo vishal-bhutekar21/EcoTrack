@@ -198,26 +198,7 @@ public class BinStatusActivity extends AppCompatActivity {
                 .addOnFailureListener(e -> Log.e("Firebase", "Failed to store request", e));
     }
 
-    private void getCurrentLocation(LocationCallback callback) {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 101);
-            return;
-        }
 
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        if (location != null) {
-            callback.onLocationReceived(location.getLatitude(), location.getLongitude());
-        } else {
-            Log.e("Location", "Failed to retrieve location");
-        }
-    }
-
-    // Interface to handle location retrieval
-    interface LocationCallback {
-        void onLocationReceived(double latitude, double longitude);
-    }
 
 
 
