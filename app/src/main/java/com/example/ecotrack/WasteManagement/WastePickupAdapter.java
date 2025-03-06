@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecotrack.R;
 import com.example.ecotrack.WasteManagement.WastePickupRequest;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -104,7 +105,7 @@ public class WastePickupAdapter extends RecyclerView.Adapter<WastePickupAdapter.
             String comments = commentsEditText.getText().toString().trim();
 
             if (!newStatus.isEmpty()) {
-                updateStatus(request.getId(), newStatus, comments);
+                updateStatus(request.getId(), newStatus, comments,request.getWasteType());
                 dialog.dismiss();
             } else {
                 Toast.makeText(view.getContext(), "Please select a status", Toast.LENGTH_SHORT).show();
@@ -116,14 +117,35 @@ public class WastePickupAdapter extends RecyclerView.Adapter<WastePickupAdapter.
         dialog.show();
     }
 
-    private void updateStatus(String id, String status, String comments) {
+    private void updateStatus(String id, String status, String comments, String wasteType) {
         DatabaseReference requestRef = databaseReference.child(id);
         requestRef.child("status").setValue(status);
 
         if (!comments.isEmpty()) {
             requestRef.child("comments").setValue(comments);
         }
+
+        if ("COMPLETED".equals(status)) {
+            deleteMatchingApprovedWasteEntries(wasteType);
+        }
     }
+
+    private void deleteMatchingApprovedWasteEntries(String wasteType) {
+        DatabaseReference approvedWasteRef = FirebaseDatabase.getInstance().getReference("ApprovedWasteEntries");
+
+        approvedWasteRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult().exists()) {
+                for (DataSnapshot snapshot : task.getResult().getChildren()) {
+                    String recyclable = snapshot.child("recyclable").getValue(String.class);
+
+                    if (recyclable != null && recyclable.equals(wasteType)) {
+                        snapshot.getRef().removeValue(); // Delete the entry
+                    }
+                }
+            }
+        });
+    }
+
 
     private String formatDate(long timestamp) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());

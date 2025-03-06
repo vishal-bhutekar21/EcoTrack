@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.ecotrack.Admin.WasteManagementActivity;
 import com.example.ecotrack.Authentication.Login;
 import com.example.ecotrack.R;
 import com.google.android.material.card.MaterialCardView;
@@ -77,7 +79,7 @@ public class ManagerDashboard extends AppCompatActivity implements NavigationVie
 
         // Set click listeners
         wasteMonitoring.setOnClickListener(view -> openActivity(WasteRequest.class));
-        collectionScheduling.setOnClickListener(view -> openActivity(CollectionSchedulingActivity.class));
+        collectionScheduling.setOnClickListener(view -> openActivity(WasteManagementActivity.class));
         wasteAlerts.setOnClickListener(view -> openActivity(WasteAlertsActivity.class));
         aiSuggestions.setOnClickListener(view -> openActivity(AISuggestionsActivity.class));
         sustainabilityMetrics.setOnClickListener(view -> openActivity(SustainabilityMetricsActivity.class));
