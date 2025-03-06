@@ -56,7 +56,7 @@ public class WasteManagementDashboard extends AppCompatActivity implements Navig
         toggle.syncState();
         // Toggle for opening/closing drawer
 
-
+//
 
     }
 
