@@ -33,7 +33,6 @@
         <activity android:name=".Admin.AdminDashboard" android:exported="false" />
         <activity android:name=".Manager.ManagerDashboard" android:exported="false" />
         <activity android:name=".WasteManagement.WasteManagementDashboard" android:exported="false" />
-        <activity android:name=".StaffWorkers.StaffWorkersDashboard" android:exported="false" />
         <activity android:name=".Authentication.Login" android:exported="true" />
         <activity android:name=".MainActivity" android:exported="true" />
         <activity android:name=".Employee.TaskAssignmentsActivity" android:exported="false" />
@@ -53,7 +52,8 @@
         <activity android:name=".Admin.ReportsActivity" android:exported="false" />
         <activity android:name=".Admin.ApprovalRequestsActivity" android:exported="false" />
         <activity android:name=".Admin.UserManagementActivity" android:exported="false" />
-
+<activity android:name=".StaffWorkers.ManualWasteEnteries" android:exported="true"/>
+        <activity android:name=".Manager.WasteRequest" android:exported="true"/>
         <activity android:name=".Employee.SafetyGuideActivity" android:exported="false" />
         <activity android:name=".Employee.WasteReportsActivity" android:exported="false" />
         <activity android:name=".Employee.PickupRequestsActivity" android:exported="false" />

@@ -79,7 +79,7 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
         // Set onClickListeners
         userRoleManagement.setOnClickListener(v -> navigateTo(UserManagementActivity.class, "User & Role Management Clicked"));
         wasteManagement.setOnClickListener(v -> navigateTo(WasteManagementActivity.class, "Waste Management Clicked"));
-        reportsAnalytics.setOnClickListener(v -> navigateTo(ReportsActivity.class, "Reports & Analytics Clicked"));
+        reportsAnalytics.setOnClickListener(v -> navigateTo(AdminDashboard.class, "Reports & Analytics Clicked"));
         complianceOversight.setOnClickListener(v -> navigateTo(ComplianceOversightActivity.class, "Compliance Oversight Clicked"));
         externalServices.setOnClickListener(v -> navigateTo(ExternalServicesActivity.class, "External Services Clicked"));
         costAnalysis.setOnClickListener(v -> navigateTo(CostAnalysisActivity.class, "Cost Analysis Clicked"));
