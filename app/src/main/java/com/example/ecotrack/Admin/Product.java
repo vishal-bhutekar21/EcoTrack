@@ -3,9 +3,14 @@ package com.example.ecotrack.Admin;
 import java.util.Date;
 
 public class Product {
+
     private String batchNo, productName, productType;
     private Date expiryDate;
     private int remainingDays;
+
+    public Product() {
+
+         }
 
     public Product(String batchNo, String productName, String productType, Date expiryDate, int remainingDays) {
         this.batchNo = batchNo;
@@ -13,6 +18,7 @@ public class Product {
         this.productType = productType;
         this.expiryDate = expiryDate;
         this.remainingDays = remainingDays;
+
     }
 
     public String getBatchNo() { return batchNo; }

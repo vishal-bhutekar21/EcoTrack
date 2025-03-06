@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -48,6 +49,7 @@
         <activity android:name=".Manager.CollectionSchedulingActivity" android:exported="false" />
         <activity android:name=".Manager.WasteMonitoringActivity" android:exported="false" />
         <activity android:name=".Manager.Manager" android:exported="false" />
+        <activity android:name=".Manager.WasteRequest" android:exported="false"/>
         <activity android:name=".Admin.SystemSettingsActivity" android:exported="false" />
         <activity android:name=".Admin.ReportsActivity" android:exported="false" />
         <activity android:name=".Admin.ApprovalRequestsActivity" android:exported="false" />

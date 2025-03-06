@@ -37,12 +37,27 @@ public class WasteManagementDashboard extends AppCompatActivity implements Navig
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Toggle for opening/closing drawer
+
+        setSupportActionBar(toolbar);
+
+        // Enable the hamburger icon (☰) on the toolbar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu); // Ensure you have an icon
+
+        // Set up Drawer Layout
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        // Set up ActionBarDrawerToggle
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        // Toggle for opening/closing drawer
+
+
+
     }
 
     @Override

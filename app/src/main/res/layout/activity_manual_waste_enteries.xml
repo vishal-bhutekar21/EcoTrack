@@ -6,16 +6,32 @@
     android:orientation="vertical"
     tools:context=".StaffWorkers.ManualWasteEnteries">
 
+    <!-- Toolbar with Back Button -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Manual Waste Entries"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_back"/>  <!-- Ensure you have a back icon in res/drawable -->
+
+    <!-- RecyclerView for displaying waste entries -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
+    <!-- Floating Action Button for adding waste -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_waste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/add"
+        android:contentDescription="Add Waste"/>
+
 </LinearLayout>

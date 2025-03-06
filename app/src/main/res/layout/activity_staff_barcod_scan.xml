@@ -4,91 +4,163 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white"
     tools:context=".StaffWorkers.StaffBarcodScan">
 
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Scan Products"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <!-- Scanned Product Details -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="50dp"
-        app:cardBackgroundColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
         app:strokeColor="@color/colorPrimary"
-        app:strokeWidth="2dp"
-        android:text="Scan Barcode/QR Code">
-        <TextView
-            android:id="@+id/tvScannedResult"
-            android:layout_width="wrap_content"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Scanned Data will appear here"
-            android:textSize="18sp"
-            android:padding="10dp"/>
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvScannedResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scanned product details will appear here"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+
+            <!-- Product Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Product Name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- MFG Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Manufacturing Date">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMfgDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Expiry Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Expiry Date">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etExpDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
+    <!-- Category Selection -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Category:"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"
+        android:orientation="horizontal">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipExpire"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="Expire"
+
+            android:textColor="@android:color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/chipRecyclable"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="Recyclable"
+
+            android:textColor="@android:color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/chipNonRecyclable"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="Non-Recyclable"
+
+            android:textColor="@android:color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/chipDisposal"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="Disposal"
+
+            android:textColor="@android:color/white" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- Scan Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnScan"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        app:cardBackgroundColor="@color/colorPrimary"
-        android:text="Scan Barcode/QR Code">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Scan Product"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scan Product"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
-    </com.google.android.material.card.MaterialCardView>
+    <!-- Submit Entry Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubmitEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Submit Entry"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:backgroundTint="@color/colorAccent"
+        android:textColor="@android:color/white" />
 
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <com.google.android.material.card.MaterialCardView-->
-<!--            android:id="@+id/btnExpiry"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginLeft="50dp"-->
-<!--            android:layout_marginRight="5dp"-->
-<!--            app:cardBackgroundColor="@color/colorAlertRed"-->
-<!--            android:text="Scan Barcode/QR Code">-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Expried"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:textSize="20dp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/white"/>-->
-<!--        </com.google.android.material.card.MaterialCardView>-->
-
-
-<!--        <com.google.android.material.card.MaterialCardView-->
-<!--            android:id="@+id/btnDefected"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_marginLeft="5dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            app:cardBackgroundColor="@color/binStatusHalf"-->
-<!--            android:text="Scan Barcode/QR Code">-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Defected"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:textSize="20dp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/white"/>-->
-<!--        </com.google.android.material.card.MaterialCardView>-->
-
-<!--    </LinearLayout>-->
 </LinearLayout>

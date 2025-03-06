@@ -8,12 +8,12 @@
     <Spinner
         android:id="@+id/spinner_waste_type"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
     <Spinner
         android:id="@+id/spinner_sub_type"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
     <ImageView
         android:id="@+id/image_view"
@@ -22,34 +22,46 @@
         android:background="@android:color/darker_gray"
         android:contentDescription="Upload Image" />
 
+    <!-- Larger Upload Image Button -->
     <Button
         android:id="@+id/button_upload_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload Image" />
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/green"
+        android:text="Upload Image"
+        android:textSize="18sp"
+        android:padding="12dp"/>
 
     <EditText
         android:id="@+id/edit_text_amount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
         android:hint="Amount (kg)" />
 
     <Spinner
         android:id="@+id/spinner_recyclable"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
     <EditText
         android:id="@+id/edit_text_date"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="Select Date"
         android:focusable="false" />
 
+    <!-- Larger Submit Button -->
     <Button
         android:id="@+id/button_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
-
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/green"
+        android:layout_marginTop="10dp"
+        android:text="Submit"
+        android:textSize="18sp"
+        android:padding="12dp" />
 </LinearLayout>

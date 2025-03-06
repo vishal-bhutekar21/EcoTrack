@@ -48,7 +48,10 @@ public class WasteRequest extends AppCompatActivity {
                 wasteList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     WasteEntry wasteEntry = dataSnapshot.getValue(WasteEntry.class);
-                    wasteList.add(wasteEntry);
+                    if (wasteEntry != null) {
+                        wasteEntry.setKey(dataSnapshot.getKey()); // Assign Firebase key
+                        wasteList.add(wasteEntry);
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -59,4 +62,5 @@ public class WasteRequest extends AppCompatActivity {
             }
         });
     }
+
 }

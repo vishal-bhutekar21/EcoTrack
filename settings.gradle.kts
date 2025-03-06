@@ -3,7 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
-        maven("https://jitpack.io")  // Correct Kotlin DSL syntax
+        maven("https://jitpack.io") // Ensure this is correctly added
     }
 }
 
@@ -12,7 +12,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://jitpack.io")  // Correct Kotlin DSL syntax
+        maven("https://jitpack.io") // Ensure this line is correctly placed
     }
 }
 
